@@ -14,9 +14,10 @@ docker-compose start
 
 # Rails
 ```shell
-docker build -t app ./Tringa/.
-docker volume create tringaapp-storage
-docker run -d --rm -it --name tringa --env-file ./Tringa/.env -v tringaapp-storage:/rails/storage --network tringa_app tringaapp
+docker build -t tringaapp ./Tringa/.
+docker volume create app-storage
+docker run -d --rm -it --name tringa --env-file ./Tringa/.env -v app-storage:/rails/storage --network tringa_app tringaapp
+
 ```
 
 # Another Rails
